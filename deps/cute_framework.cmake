@@ -1,0 +1,8 @@
+set(CF_FRAMEWORK_STATIC OFF CACHE BOOL "")
+set(CF_FRAMEWORK_BUILD_SAMPLES OFF CACHE BOOL "")
+set(CF_FRAMEWORK_BUILD_TESTS OFF CACHE BOOL "")
+add_subdirectory("cute_framework" EXCLUDE_FROM_ALL)
+target_include_directories(cute SYSTEM PUBLIC BEFORE "cute_framework/include")
+target_include_directories(cute SYSTEM PUBLIC BEFORE "cute_framework/libraries")
+target_include_directories(cute SYSTEM PUBLIC BEFORE "cute_framework/libraries/cimgui")
+target_include_directories(cute SYSTEM PUBLIC BEFORE "cute_framework/libraries/cimgui/imgui")
